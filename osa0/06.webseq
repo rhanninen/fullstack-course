@@ -1,0 +1,17 @@
+title Tehtävä 0.6
+
+kayttaja->selain: täytä lomake ja klikkaa talleta
+note right of selain
+selain päivittää 
+listansa ja näyttää
+sen käyttäjälle
+end note
+selain->palvelin: POST /new_note_spa
+
+note left of palvelin
+palvelin tallentaa POST-pyynnön
+mukana tulevan mpanon muistiinsa.
+end note
+
+palvelin->selain: 201 Created
+

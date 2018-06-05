@@ -1,0 +1,15 @@
+title Tehtävä 0.4
+
+kayttaja->selain: kirjoittaa muistiinpanon ja painaa talleta
+selain->palvelin: POST, jonka runkona muistiinpano
+note left of palvelin
+Palvelin tallentaa käyttäjän
+muistiinpanon
+end note
+palvelin->selain: 302 FOUND /notes
+
+selain->palvelin: GET /notes
+
+note left of palvelin
+loput sama kuin tehtävä 0.3
+end note

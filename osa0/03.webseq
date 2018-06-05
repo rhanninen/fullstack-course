@@ -1,0 +1,46 @@
+title Tehtävä 0.3
+
+kayttaja->selain: kayttaja klikkaa 'muistiinpanot'-linkkiä
+selain->palvelin: GET /notes
+note left of palvelin
+Vastauksena HTML-dokumentti, 
+jossa muistiinpano-lisäyslomake.
+end note
+palvelin->selain: 200 OK /notes
+
+note left of selain
+Selain näyttää notes-dokumentin,
+jossa ainoastaan lomake.
+end note
+
+selain->palvelin: GET /main.css
+palvelin->selain: 200 OK main.css
+
+note left of selain
+selain näyttää palvelimen palauttaman HTML:n
+johon on sovellettu main.css-tiedoston sisältämiä
+tyylimäärityksiä.
+end note
+
+selain->palvelin: GET /main.js
+palvelin->selain: 200 OK main.js
+
+note left of selain
+selain suorittaa main.js-tiedoston sisältämät
+Javascript-lauseet.
+end note
+
+selain->palvelin: GET /data.json
+
+note left of palvelin
+Palvelimen muistista 
+haetaan lista muistiinpanoja
+end note
+
+palvelin->selain: 200 OK data.json
+
+note left of selain
+Selain kutsuu edellisen pyynnön
+callback-funktiota joka luo dokumenttiin
+listan haetuista muistiinpanoista.
+end note
